@@ -4,7 +4,7 @@
 #
 Name     : R-TH.data
 Version  : 1.0.9
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/TH.data_1.0-9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/TH.data_1.0-9.tar.gz
 Summary  : TH's Data Archive
