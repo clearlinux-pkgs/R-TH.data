@@ -4,7 +4,7 @@
 #
 Name     : R-TH.data
 Version  : 1.0.10
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/TH.data_1.0-10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/TH.data_1.0-10.tar.gz
 Summary  : TH's Data Archive
@@ -13,29 +13,26 @@ License  : GPL-3.0
 BuildRequires : buildreq-R
 
 %description
-**********************************************************************
-*  Reproducibility Information for
-*  Spatio-Phylogenetic Multi-Species Distribution Models
-*  by A. Kaldhusdal, R. Brandl, J. Mueller, L. Moest and T. Hothorn
-**********************************************************************
+maintains.
 
 %prep
 %setup -q -c -n TH.data
+cd %{_builddir}/TH.data
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552942192
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1589515952
 
 %install
-export SOURCE_DATE_EPOCH=1552942192
+export SOURCE_DATE_EPOCH=1589515952
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -61,12 +58,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  TH.data || :
+R CMD check --no-manual --no-examples --no-codoc TH.data || :
 
 
 %files

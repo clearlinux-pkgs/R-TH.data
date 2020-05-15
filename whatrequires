@@ -1,11 +1,10 @@
 # This file contains recursive sources that require this package
 R-coin
 R-drc
+R-flexsurv
 R-haplo.stats
 R-ipred
-R-libcoin
 R-multcomp
 R-party
-R-partykit
 R-rms
 R-varImp
