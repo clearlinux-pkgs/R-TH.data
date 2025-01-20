@@ -1,6 +1,5 @@
 # This file contains recursive sources that require this package
 R-coin
-R-ipred
 R-mlt
 R-multcomp
 R-party
